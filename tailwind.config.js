@@ -5,13 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primarybase: "red",
+        primarybase: "#749B3F",
         primarybase1: "red",
         primarybase2: "red",
         secondarybase: "red",
         secondarybase100: "red",
         third: "green",
         inputcolor: "black",
+        primaryFontColor: "#212337",
+      },
+      fontFamily: {
+        "noto-sans": ['"Noto Sans"', "serif"],
+        rubik: ["Rubik", "serif"],
+        questrial: ["Questrial", " serif"],
       },
     },
   },

@@ -1,19 +1,15 @@
 import { Route, Routes } from "react-router";
-import App from "./App";
 import { RootLayout } from "./layout/RootLayout";
-import { DashboardLayout } from "./layout/DashboardLayout";
 import { Registration } from "./pages/Registration/Registration";
+import { Home } from "./pages/Home/Home";
 
 export const Routing = () => {
   return (
     <Routes>
       <Route element={<RootLayout />}>
-        <Route index element={<App />} />
+        <Route index element={<Home />} />
       </Route>
       <Route path="/reg" element={<Registration />} />
-      <Route path="dashboard" element={<DashboardLayout />}>
-        <Route index element={<App />} />
-      </Route>
     </Routes>
   );
 };

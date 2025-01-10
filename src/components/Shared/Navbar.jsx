@@ -1,13 +1,17 @@
 import { IoMenu } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
+
 export const Navbar = () => {
   const menu = (
     <>
       <li>
         <NavLink
+          to="/"
           className={({ isActive }) =>
-            `relative after:content-[""] after:absolute after:h-[3px] after:w-1/2 after:rounded-lg after:bg-primarybase after:bottom-[-4px] after:left-[25%] ${
-              isActive ? "" : ""
+            ` hover:text-primarybase ${
+              isActive
+                ? "relative after:content-[''] after:absolute after:h-[3px] after:w-1/2 after:rounded-lg after:bg-primarybase after:bottom-[-4px] after:left-[25%]"
+                : ""
             }`
           }
         >

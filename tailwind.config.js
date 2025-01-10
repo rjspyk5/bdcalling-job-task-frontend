@@ -6,13 +6,14 @@ export default {
     extend: {
       colors: {
         primarybase: "#749B3F",
-        primarybase1: "red",
+        primarybase1: "#749B3F1A",
         primarybase2: "red",
         secondarybase: "red",
         secondarybase100: "red",
         third: "green",
         inputcolor: "black",
         primaryFontColor: "#212337",
+        primaryFontColorbase2: "#4A4A52",
       },
       fontFamily: {
         "noto-sans": ['"Noto Sans"', "serif"],

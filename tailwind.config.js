@@ -8,7 +8,7 @@ export default {
         primarybase: "#749B3F",
         primarybase1: "#749B3F1A",
         primarybase2: "red",
-        secondarybase: "red",
+        secondarybase: "#FF6A1A",
         secondarybase100: "red",
         third: "green",
         inputcolor: "black",

@@ -6,20 +6,25 @@ import { PromoCode } from "./PromoCode";
 
 export const HeroSection = () => {
   return (
-    <div className="py-10">
+    <div className="pb-10 pt-20 top-0 relative">
       {/* absoulte position things which will need full space */}
-      <div className="absolute inset-0 flex w-full ">
+      <div className="absolute inset-0 flex w-full h-full">
         <div className="w-4/6 bg-[#FFFFFF1F]"></div>
         <div className="w-2/6 bg-primarybase"></div>
       </div>
+      <img
+        className="max-h-[90%] absolute z-10  md:right-[4%] bottom-0"
+        src={personimg}
+        alt=""
+      />
 
       {/* absoulte position things which will need full space */}
-      <div className="relative ">
-        <div className="z-20 relative max-w-[1150px] mx-auto">
+      <div className="relative md:px-[8%]">
+        <div className="z-20 relative ">
           <span className="font-rubik mb-5 inline-flex rounded-lg md:text-lg px-3 py-1 bg-primarybase1 text-primarybase ">
             Welcome to Fresh Harvest
           </span>
-          <p className="font-rubik mb-4 md:max-w-[550px] max-w-[290px]  m-0 lg:text-[42px] md:text-4xl text-3xl text-primaryFontColor font-semibold md:font-medium ">
+          <p className="font-rubik mb-4 md:max-w-[700px] w-full  m-0 xl:text-[80px] lg:text-[60px] md:text-[50px] text-5xl text-primaryFontColor font-semibold md:font-medium xl:leading-[80px] lg:leading-[60px] md:leading-[50px]">
             Fresh Fruits and Vegetables
           </p>
           <p className="md:max-w-[450px] mb-8  text-primaryFontColorbase2 max-w-[350px] text-sm md:text-base">
@@ -41,11 +46,6 @@ export const HeroSection = () => {
             </div>
           </div>
         </div>
-        <img
-          className="w-[500px] h-[450px] z-10 absolute md:right-[8%] top-0"
-          src={personimg}
-          alt=""
-        />
       </div>
     </div>
   );

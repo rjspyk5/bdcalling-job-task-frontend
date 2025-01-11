@@ -5,9 +5,13 @@ export const PromoCode = () => {
   return (
     <>
       <div className="relative ">
-        <img className="absolute left-[8%]" src={rightArrow} alt="" />
+        <img
+          className="absolute hidden md:block left-[8%]"
+          src={rightArrow}
+          alt=""
+        />
         {/* promo card */}
-        <div className="px-3 pt-3 py-1 bg-[#EBEBEB] inline-flex ml-[20%] items-center space-x-1 rounded-xl">
+        <div className="px-3 pt-3 py-1 bg-[#EBEBEB] inline-flex md:ml-[15%] items-center space-x-1 rounded-xl">
           {/* left side */}
           <div className=" font-rubik font-medium space-y-1">
             {" "}

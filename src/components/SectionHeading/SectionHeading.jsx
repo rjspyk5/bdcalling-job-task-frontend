@@ -2,7 +2,7 @@ import React from "react";
 
 export const SectionHeading = ({ name, heading, subheading }) => {
   return (
-    <div className="flex justify-center items-center flex-col space-x-4">
+    <div className="flex justify-center items-center flex-col space-y-4">
       <span className="font-rubik rounded-lg md:text-lg px-3 py-1 bg-primarybase1 text-primarybase mx-auto">
         {name}
       </span>

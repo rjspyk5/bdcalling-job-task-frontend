@@ -11,7 +11,7 @@ import img3 from "../../assets/images/customer/3.jpg";
 import { CustomerSayCard } from "./CustomerSayCard";
 export const WhatCustomerSay = () => {
   return (
-    <div>
+    <div className="mt-16 md:mt-28 lg:px-[6%] xl:px-[8%] px-[3%]">
       <SectionHeading
         name="Testimonial"
         heading="What Our Customers Say"
@@ -35,11 +35,11 @@ export const WhatCustomerSay = () => {
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <CustomerSayCard img={img2} />
+          <CustomerSayCard img={img1} />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <CustomerSayCard img={img3} />
+          <CustomerSayCard img={img1} />
         </SwiperSlide>
       </Swiper>
     </div>

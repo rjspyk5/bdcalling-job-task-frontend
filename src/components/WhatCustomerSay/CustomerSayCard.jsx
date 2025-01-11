@@ -1,16 +1,22 @@
 import React from "react";
+import icon from "../../assets/icons/Group 4.svg";
 
 export const CustomerSayCard = ({ img }) => {
   return (
-    <div className="grid  md:grid-cols-6 grid-cols-1">
-      <div className="col-span-2">
+    <div className="grid  md:grid-cols-7 grid-cols-1 md:gap-10 gap-6 py-14">
+      <div className="md:col-span-3 flex justify-center items-center relative">
         <img
-          className="rounded-full mx-auto max-w-[300px] max-h-[400px]"
+          className="rounded-full mx-auto max-w-[300px] md:max-w-[250px] max-h-[350px]"
           src={img}
           alt=""
         />
+        <img
+          className="absolute md:top-[-60px] md:right-[51px] right-[66px] top-[-53px]"
+          src={icon}
+          alt=""
+        />
       </div>
-      <div className="col-span-4 flex justify-center items-center">
+      <div className="md:col-span-4 flex justify-center items-center">
         <div className=" p-8 rounded-lg gap-20 bg-[#F4F6F6]">
           <p className="text-lg leading-relaxed">
             I absolutely love Fresh Harvest! The quality of their produce is

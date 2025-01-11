@@ -15,8 +15,8 @@ export const Countdown = () => {
       <div className="lg:px-[6%] xl:px-[8%] px-[3%] py-20">
         <div className="md:space-y-3 space-y-2 relative">
           <span className="absolute hidden md:block xl:right-[-20%]  lg:right-[-20%] md:right-[-40%] bottom-[-15%] md:bottom-[-10%] xl:bottom-[-15%]">
-            <span className="relative">
-              <img className="absolute" src={yellow} alt="" />
+            <span className="relative z-20">
+              <img className="absolute z-20" src={yellow} alt="" />
             </span>
             <img
               className="xl:w-[77%] lg:w-[65%] md:w-[55%] "

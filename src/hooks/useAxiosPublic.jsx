@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const useAxiosPublic = () => {
   const axiosPublic = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "https://api-fresh-harvest.code-commando.com",
     withCredentials: true,
   });
   return axiosPublic;

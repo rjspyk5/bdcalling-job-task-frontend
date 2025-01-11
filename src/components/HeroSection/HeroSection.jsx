@@ -1,17 +1,21 @@
 import personimg from "../../assets/images/person.png";
+import appstore from "../../assets/icons/appstore.svg";
+import googlePlay from "../../assets/icons/googleplay.svg";
+
+import { PromoCode } from "./PromoCode";
 
 export const HeroSection = () => {
   return (
-    <div className="grid grid-cols-7 relative">
+    <div className="py-10">
       {/* absoulte position things which will need full space */}
-      <img
-        className="absolute w-[500px] h-[450px] right-[3%]"
-        src={personimg}
-        alt=""
-      />
+      <div className="absolute inset-0 flex w-full ">
+        <div className="w-4/6 bg-[#FFFFFF1F]"></div>
+        <div className="w-2/6 bg-primarybase"></div>
+      </div>
+
       {/* absoulte position things which will need full space */}
-      <div className="col-span-5 bg-[#FFFFFF1F]">
-        <div className=" ">
+      <div className="relative ">
+        <div className="z-20 relative max-w-[1150px] mx-auto">
           <span className="font-rubik mb-5 inline-flex rounded-lg md:text-lg px-3 py-1 bg-primarybase1 text-primarybase ">
             Welcome to Fresh Harvest
           </span>
@@ -23,10 +27,26 @@ export const HeroSection = () => {
             freshest and most flavorful fruits and vegetables
           </p>
           <button className="btn bg-secondarybase text-white">Shop Now</button>
-          <div className="relative"></div>
+
+          <PromoCode />
+          <div>
+            <p className="mb-2">Download App</p>
+            <div className="flex space-x-4">
+              <button>
+                <img src={appstore} alt="" />
+              </button>
+              <button>
+                <img src={googlePlay} alt="" />
+              </button>
+            </div>
+          </div>
         </div>
+        <img
+          className="w-[500px] h-[450px] z-10 absolute md:right-[8%] top-0"
+          src={personimg}
+          alt=""
+        />
       </div>
-      <div className="col-span-2 w-full h-full bg-primarybase"></div>
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FaHeart } from "react-icons/fa";
+import { IoMdCart } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 
@@ -84,8 +86,15 @@ export const Navbar = () => {
 
           <ul className=" space-x-16 hidden md:flex">{menu}</ul>
           <div className="flex space-x-5">
-            <div className="btn hidden md:inline-flex">Favorites</div>
-            <div className="btn">Cart</div>
+            <div className="justify-center text-white items-center hidden md:inline-flex">
+              {" "}
+              <FaHeart color="white" className="mr-2" /> Favorites
+            </div>
+            <div className="justify-center text-white items-center inline-flex">
+              {" "}
+              <IoMdCart color="white" className="mr-2" />
+              <span className="hidden md:block">Cart</span>
+            </div>
 
             {/* Drawer start */}
             <span className="md:hidden">
@@ -117,7 +126,9 @@ export const Navbar = () => {
 
             {/* Drawer End */}
 
-            <div className="btn hidden md:inline-flex">Sign In</div>
+            <div className="outline-1 font-rubik outline-white border  border-white cursor-pointer text-white px-4 py-2 font-semibold rounded-md  hidden md:inline-flex">
+              Sign In
+            </div>
           </div>
         </div>
       </div>

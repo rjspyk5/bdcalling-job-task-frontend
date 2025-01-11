@@ -1,6 +1,12 @@
 import personimg from "../../assets/images/person.png";
 import appstore from "../../assets/icons/appstore.svg";
 import googlePlay from "../../assets/icons/googleplay.svg";
+import yellowicon from "../../assets/icons/yellow near person.svg";
+
+import f1 from "../../assets/icons/r1.png";
+import f2 from "../../assets/icons/r2.png";
+import f3 from "../../assets/icons/r3.png";
+
 import "./style.css";
 
 import { PromoCode } from "./PromoCode";
@@ -12,15 +18,30 @@ export const HeroSection = () => {
       <div className="absolute inset-0 flex w-full h-full">
         <div className="w-4/6 bg-[#FFFFFF1F]"></div>
         <div className="w-2/6 bg-primarybase">
-          {" "}
           <img
             className="absolute z-10 personimg bottom-0"
             src={personimg}
             alt=""
-          />{" "}
+          />
+          <img
+            src={yellowicon}
+            className="absolute yellowicon bottom-0 z-20"
+            alt=""
+          />
         </div>
       </div>
-
+      <img className="hidden absolute md:block" src={f1} alt="" />
+      <img
+        className=" md:block absolute md:left-[50%] left-[30%] mt-5"
+        src={f2}
+        alt=""
+      />
+      <img
+        className="hidden md:block absolute bottom-[18%] left-[3%]"
+        src={f2}
+        alt=""
+      />
+      <img className="absolute md:block hidden right-0" src={f3} alt="" />
       {/* absoulte position things which will need full space */}
       <div className="relative lg:px-[6%] xl:px-[8%] px-[3%]">
         <div className="z-20 relative ">

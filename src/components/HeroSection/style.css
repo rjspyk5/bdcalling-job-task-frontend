@@ -1,13 +1,21 @@
-@media (max-width: 319px) {
+@media (max-width: 320px) {
   .personimg {
-    right: -29%;
-    height: 47%;
+    right: -23%;
+    height: 45%;
+  }
+  .yellowicon {
+    bottom: 21%;
+    left: 32%;
   }
 }
-@media (min-width: 320px) and (max-width: 374px) {
+@media (min-width: 321px) and (max-width: 374px) {
   .personimg {
     right: -24%;
     height: 55%;
+  }
+  .yellowicon {
+    bottom: 27%;
+    left: 25%;
   }
 }
 @media (min-width: 375px) and (max-width: 424px) {
@@ -15,11 +23,19 @@
     right: -24%;
     height: 55%;
   }
+  .yellowicon {
+    bottom: 26%;
+    left: 37%;
+  }
 }
 @media (min-width: 425px) and (max-width: 550px) {
   .personimg {
     right: -17%;
     height: 57%;
+  }
+  .yellowicon {
+    bottom: 33%;
+    left: 48%;
   }
 }
 @media (min-width: 551px) and (max-width: 767px) {
@@ -27,11 +43,19 @@
     right: 3%;
     height: 62%;
   }
+  .yellowicon {
+    bottom: 33%;
+    left: 48%;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .personimg {
     right: 2%;
     height: 68%;
+  }
+  .yellowicon {
+    bottom: 33%;
+    left: 48%;
   }
 }
 @media (min-width: 1024px) and (max-width: 1239px) {
@@ -39,11 +63,19 @@
     right: 2%;
     height: 85%;
   }
+  .yellowicon {
+    bottom: 42%;
+    left: 51%;
+  }
 }
 @media (min-width: 1240px) and (max-width: 1439px) {
   .personimg {
     right: 6%;
     height: 91%;
+  }
+  .yellowicon {
+    bottom: 45%;
+    left: 51%;
   }
 }
 @media (min-width: 1440px) and (max-width: 1600px) {
@@ -51,10 +83,18 @@
     right: 8%;
     height: 91%;
   }
+  .yellowicon {
+    bottom: 45%;
+    left: 54%;
+  }
 }
 @media (min-width: 1601px) and (max-width: 2560px) {
   .personimg {
     right: 19%;
     height: 92%;
+  }
+  .yellowicon {
+    bottom: 47%;
+    left: 59%;
   }
 }

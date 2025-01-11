@@ -14,7 +14,9 @@ export const Home = () => {
       <AboutUs />
       <Countdown />
       <WhatCustomerSay />
-      <Blog />
+      <div id="shop">
+        <Blog />
+      </div>
     </div>
   );
 };

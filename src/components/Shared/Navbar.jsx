@@ -39,9 +39,51 @@ export const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>Shop</li>
-      <li>About Us</li>
-      <li>Blog</li>
+      <li>
+        <NavLink
+          to="/shop"
+          className={({ isActive }) =>
+            ` hover:text-primarybase ${
+              isActive
+                ? "relative after:content-[''] after:absolute after:h-[3px] after:w-1/2 after:rounded-lg after:bg-primarybase after:bottom-[-4px] after:left-[25%]"
+                : ""
+            }`
+          }
+        >
+          {" "}
+          Shop
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            ` hover:text-primarybase ${
+              isActive
+                ? "relative after:content-[''] after:absolute after:h-[3px] after:w-1/2 after:rounded-lg after:bg-primarybase after:bottom-[-4px] after:left-[25%]"
+                : ""
+            }`
+          }
+        >
+          {" "}
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/blog"
+          className={({ isActive }) =>
+            ` hover:text-primarybase ${
+              isActive
+                ? "relative after:content-[''] after:absolute after:h-[3px] after:w-1/2 after:rounded-lg after:bg-primarybase after:bottom-[-4px] after:left-[25%]"
+                : ""
+            }`
+          }
+        >
+          {" "}
+          Blog
+        </NavLink>
+      </li>
     </>
   );
   return (

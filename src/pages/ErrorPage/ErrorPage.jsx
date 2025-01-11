@@ -1,8 +1,7 @@
 import { useNavigate, useRouteError } from "react-router";
-import er from "../assets/images/404.png";
+import er from "../../assets/images/er.png";
 
 export const ErrorPage = () => {
-  const error = useRouteError();
   const navigate = useNavigate();
 
   return (
@@ -29,9 +28,6 @@ export const ErrorPage = () => {
             <h1 className="mt-3 text-2xl font-semibold md:text-3xl">Oops!</h1>
             <img src={er} alt="" />
             <p className="mt-4 ">Sorry, an unexpected error has occurred.</p>
-            <p className="mt-4">
-              <i>{error.statusText || error.message}</i>
-            </p>
 
             <div className="flex items-center w-full mt-6 gap-x-3 shrink-0 sm:w-auto">
               <button

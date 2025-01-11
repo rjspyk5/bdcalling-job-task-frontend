@@ -26,7 +26,7 @@ export const Navbar = () => {
   );
   return (
     <div className="z-50 fixed top-0 w-full">
-      <div className="md:px-[8%]">
+      <div className="lg:px-[6%] xl:px-[8%] px-[3%]">
         <div className="flex justify-between items-center">
           <Link
             to="/"

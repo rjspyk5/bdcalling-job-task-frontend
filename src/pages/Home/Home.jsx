@@ -4,6 +4,7 @@ import { WhatCustomerSay } from "../../components/WhatCustomerSay/WhatCustomerSa
 import { AboutUs } from "../../components/AboutUs/AboutUs";
 import { OurProducts } from "../../components/OurProducts/OurProducts";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
+import { Countdown } from "../../components/Countdown/Countdown";
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
       <HeroSection />
       <OurProducts />
       <AboutUs />
+      <Countdown />
       <WhatCustomerSay />
       <Blog />
     </div>

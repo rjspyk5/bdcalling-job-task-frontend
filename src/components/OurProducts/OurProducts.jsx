@@ -19,7 +19,7 @@ export const OurProducts = () => {
     },
   });
   return (
-    <div className="mt-16 lg:px-[6%] xl:px-[8%] px-[3%] relative">
+    <div className="mt-16 md:mt-28 lg:px-[6%] xl:px-[8%] px-[3%] relative">
       <img src={r4} className="absolute left-[12%] top-[6%]" alt="" />
       <img src={r5} className="absolute right-[10%]" alt="" />
       <SectionHeading

@@ -84,16 +84,16 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          <ul className=" space-x-16 hidden md:flex">{menu}</ul>
-          <div className="flex space-x-5">
+          <ul className=" md:space-x-5 lg:space-x-16 hidden md:flex">{menu}</ul>
+          <div className="flex md:space-x-5 space-x-2">
             <div className="justify-center text-white items-center hidden md:inline-flex">
-              {" "}
-              <FaHeart color="white" className="mr-2" /> Favorites
+              <FaHeart color="white" className="mr-2" />{" "}
+              <span className="hidden lg:block">Favorites</span>
             </div>
             <div className="justify-center text-white items-center inline-flex">
               {" "}
               <IoMdCart color="white" className="mr-2" />
-              <span className="hidden md:block">Cart</span>
+              <span className="hidden lg:block">Cart</span>
             </div>
 
             {/* Drawer start */}
@@ -107,7 +107,10 @@ export const Navbar = () => {
                 />
                 <div className="drawer-content">
                   {/* Page content here */}
-                  <label htmlFor="my-drawer-4" className="drawer-button btn ">
+                  <label
+                    htmlFor="my-drawer-4"
+                    className="drawer-button cursor-pointer text-white"
+                  >
                     <IoMenu size={30} />
                   </label>
                 </div>

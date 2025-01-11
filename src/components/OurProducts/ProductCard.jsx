@@ -1,7 +1,7 @@
 export const ProductCard = ({ img, name, price }) => {
   return (
-    <div className="p-2 rounded-2xl shadow-[0px_4px_20px_0px_rgba(9,43,94,0.06)]">
-      <div className="bg-[#F4F6F6] flex justify-center items-center">
+    <div className="p-2  rounded-2xl shadow-[0px_4px_20px_0px_rgba(9,43,94,0.06)]">
+      <div className="bg-[#F4F6F6] rounded-2xl flex justify-center items-center">
         <img
           className="w-[116px] h-[116px] md:w-48 md:h-48 "
           src={img}

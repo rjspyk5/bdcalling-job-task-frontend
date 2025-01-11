@@ -20,8 +20,8 @@ export const OurProducts = () => {
   });
   return (
     <div className="mt-16 md:mt-28 lg:px-[6%] xl:px-[8%] px-[3%] relative">
-      <img src={r4} className="absolute left-[12%] top-[6%]" alt="" />
-      <img src={r5} className="absolute right-[10%]" alt="" />
+      <img src={r4} className="absolute md:left-[12%] left-0 top-[6%]" alt="" />
+      <img src={r5} className="absolute md:right-[10%] right-0" alt="" />
       <SectionHeading
         name={"Products"}
         heading={"Our Fresh Products"}
@@ -29,6 +29,17 @@ export const OurProducts = () => {
           "We pride ourselves on offering a wide variety of fresh and flavorful fruits, vegetables, and salad ingredients."
         }
       />
+      <div className="flex justify-center items-center mt-4 mb-8 space-x-4">
+        <button className="outline-1 outline-[#A6A6A6] border rubik border-[#A6A6A6] cursor-pointer text-[#A6A6A6] px-3 py-1 text-lg rounded-md ">
+          All
+        </button>
+        <button className="outline-1 outline-[#A6A6A6] border rubik border-[#A6A6A6] cursor-pointer text-[#A6A6A6] px-3 py-1 text-lg rounded-md ">
+          Fruits
+        </button>
+        <button className="outline-1 outline-[#A6A6A6] border rubik border-[#A6A6A6] cursor-pointer text-[#A6A6A6] px-3 py-1 text-lg rounded-md ">
+          All
+        </button>
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         <ProductCard img={product} name={"Mashrum"} price={20} />
         <ProductCard img={product} name={"Mashrum"} price={20} />
@@ -39,6 +50,7 @@ export const OurProducts = () => {
         <ProductCard img={product} name={"Mashrum"} price={20} />
         <ProductCard img={product} name={"Mashrum"} price={20} />
       </div>
+
       <div className="flex justify-center items-center mt-8">
         <CustomButton name={"See all products"} />
       </div>

@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 
 export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const menu = (
     <>
       <li>
@@ -25,7 +43,11 @@ export const Navbar = () => {
     </>
   );
   return (
-    <div className="z-[100] fixed top-0 w-full backdrop-blur">
+    <div
+      className={`${
+        isScrolled ? "backdrop-blur" : "bg-transparent"
+      } z-[100] fixed top-0 w-full py-2`}
+    >
       <div className="lg:px-[6%] xl:px-[8%] px-[3%]">
         <div className="flex justify-between items-center">
           <Link

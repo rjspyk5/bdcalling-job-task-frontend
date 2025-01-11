@@ -1,12 +1,8 @@
 import { CopyrightSection } from "./CopyrightSection";
-import { FaFacebook } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaTwitter } from "react-icons/fa";
-import { Link } from "react-router";
 export const Footer = () => {
   return (
     <div>
-      <footer className="footer bg-base-200 text-base-content pt-14">
+      <footer className="footer bg-[#F4F6F6] lg:px-[6%] xl:px-[8%] px-[3%] text-base-content pt-14 mt-10 pb-8 md:mt-20">
         <aside>
           <svg
             width="50"

@@ -7,7 +7,7 @@ import img3 from "../../assets/images/blog/image 3.png";
 
 export const Blog = () => {
   return (
-    <div>
+    <div className="mt-8 md:mt-16 lg:px-[6%] xl:px-[8%] px-[3%] relative">
       <SectionHeading
         name="Blog"
         heading="Fresh Harvest Blog"

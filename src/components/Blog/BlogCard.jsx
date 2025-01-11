@@ -3,12 +3,16 @@ import React from "react";
 export const BlogCard = ({ date, heading, img }) => {
   return (
     <div>
-      <img className="w-full" src={img} alt="" />
-      <p>May 23, 2025</p>
+      <img
+        className="lg:max-w-[384px] md:max-w-[350px] w-full"
+        src={img}
+        alt=""
+      />
+      <p className="mt-6 mb-2">May 23, 2025</p>
       <p className="font-rubik text-lg font-medium ">
         Exploring Seasonal Delights: A Guide to What's Fresh Right Now
       </p>
-      <button className="font-rubik text-lg cursor-pointer font-semibold flex items-center text-[#FF6A1A]">
+      <button className="font-rubik mt-4 text-lg cursor-pointer font-semibold flex items-center text-[#FF6A1A]">
         Read More
         <svg
           xmlns="http://www.w3.org/2000/svg"

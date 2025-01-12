@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { IoMdCart } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
 import { Link, NavLink } from "react-router";
+import { useAuth } from "../../hooks/useAuth";
+import { useForm } from "react-hook-form";
+import { useAxiosPublic } from "../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
+import { UserIcon } from "./UserIcon/UserIcon";
+import { BsFacebook } from "react-icons/bs";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-
-  // Track scroll position
+  const { loading, user, login } = useAuth();
+  const [isLoginForm, setisLoginForm] = useState(true);
+  const axiosPublic = useAxiosPublic();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -22,6 +31,56 @@ export const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    data.email = data.email.trim();
+    data.password = data.password.trim();
+    try {
+      const result = await axiosPublic.post(
+        `/api/v1/${isLoginForm ? "auth/login" : "users/register"}`,
+        data
+      );
+
+      if (result?.data?.success) {
+        if (!isLoginForm) {
+          document.getElementById("my_modal_1").close();
+          reset();
+          setisLoginForm(!isLoginForm);
+          Swal.fire({
+            icon: "success",
+            text: result?.data?.message || "Successfully!",
+          });
+        }
+      }
+      if (isLoginForm) {
+        login(result?.data?.data?.token);
+        document.getElementById("my_modal_1").close();
+        reset();
+        Swal.fire({
+          icon: "success",
+          text: result?.data?.message || "Successfully!",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      document.getElementById("my_modal_1").close();
+      reset();
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error?.response?.data?.message || "Something went wrong!",
+      });
+    }
+  };
+
   const menu = (
     <>
       <li>
@@ -83,6 +142,14 @@ export const Navbar = () => {
           {" "}
           Blog
         </NavLink>
+      </li>
+      <li>
+        <button
+          className="   outline-1 font-rubik outline-white border bg-secondarybase cursor-pointer text-white px-4 py-2 font-semibold rounded-md  md:hidden inline-flex"
+          onClick={() => document.getElementById("my_modal_1").showModal()}
+        >
+          Sign In
+        </button>
       </li>
     </>
   );
@@ -170,10 +237,143 @@ export const Navbar = () => {
             </span>
 
             {/* Drawer End */}
+            {/* Modal button Start */}
 
-            <div className="outline-1 font-rubik outline-white border  border-white cursor-pointer text-white px-4 py-2 font-semibold rounded-md  hidden md:inline-flex">
-              Sign In
-            </div>
+            {user ? (
+              <UserIcon />
+            ) : (
+              <button
+                className="   outline-1 font-rubik outline-white border  border-white cursor-pointer text-white px-4 py-2 font-semibold rounded-md  hidden md:inline-flex"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
+                Sign In
+              </button>
+            )}
+
+            {/* Sign Up Modal */}
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box mr-4 max-h-[600px] max-w-[478px] md:mr-0  py-6 px-8">
+                <form method="dialog">
+                  <div className="flex justify-end">
+                    <button className="cursor-pointer rounded-full hover:bg-gray-100 p-1">
+                      <RxCross2 />
+                    </button>
+                  </div>
+                </form>
+
+                <h3 className="font-semibold text-center font-rubik text-4xl">
+                  {isLoginForm ? "Login" : "Registration"}
+                </h3>
+
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="card-body  p-0"
+                >
+                  {!isLoginForm && (
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Name</span>
+                      </label>
+                      <input
+                        {...register("fullName")}
+                        type="text"
+                        placeholder="Write your full name"
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                  )}
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Email</span>
+                    </label>
+                    <input
+                      {...register("email")}
+                      type="email"
+                      placeholder="Your email here"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Password</span>
+                    </label>
+                    <input
+                      {...register("password", { minLength: 8 })}
+                      type="password"
+                      placeholder="password"
+                      className="input input-bordered"
+                      required
+                    />
+                  </div>
+
+                  {errors?.password && (
+                    <span className="text-red-500">
+                      Password must have to be eight char
+                    </span>
+                  )}
+
+                  {isLoginForm && (
+                    <div className="flex justify-between items-center">
+                      <span className="flex justify-center items-center">
+                        <input
+                          className="checkbox checkbox-sm border-orange-400 [--chkbg:theme(colors.white)] [--chkfg:orange] "
+                          type="checkbox"
+                          name=""
+                          id=""
+                        />
+                        <label className="label">
+                          <span className="label-text">Remember me</span>
+                        </label>
+                      </span>
+                      <Link className="font-rubik font-medium underline">
+                        Forgot Password
+                      </Link>
+                    </div>
+                  )}
+                  <div className="form-control ">
+                    <button className="btn bg-secondarybase focus:bg-secondarybase hover:bg-orange-600 text-white">
+                      Login
+                    </button>
+                  </div>
+                </form>
+                <div className="flex items-center my-3  justify-center">
+                  <div className="border-t border-1 border-[#D9D9D9] flex-grow"></div>
+                  <span className="mx-4 font-rubik font-medium text-[#4A4A52]">
+                    Or Login With
+                  </span>
+                  <div className="border-t border-1 border-[#D9D9D9] flex-grow"></div>
+                </div>
+
+                <div className="flex justify-center gap-4">
+                  <button className="flex items-center w-full justify-center px-6 py-3 mt-4 transition-colors duration-300 transform border rounded-lg ">
+                    <FcGoogle size={30} />
+                    <span className="mx-2">Google</span>
+                  </button>
+                  <button className="flex items-center w-full justify-center px-6 py-3 mt-4 transition-colors duration-300 transform border rounded-lg ">
+                    <BsFacebook className="text-blue-400" size={30} />
+                    <span className="mx-2">Facebook</span>
+                  </button>
+                </div>
+                <div className="mt-6 text-center ">
+                  <button className="text-sm font-rubik font-semibold">
+                    {isLoginForm
+                      ? "Don’t have account?"
+                      : "Already have an account?"}
+                    <span
+                      onClick={() => setisLoginForm(!isLoginForm)}
+                      className="text-secondarybase"
+                    >
+                      {isLoginForm ? "Registration" : "Login"}
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </dialog>
+            {/* Sign Up Modal End */}
           </div>
         </div>
       </div>

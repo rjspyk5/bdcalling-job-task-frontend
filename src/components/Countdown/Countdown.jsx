@@ -2,16 +2,18 @@ import React from "react";
 import bg from "../../assets/images/Bg.png";
 import fruitsimg from "../../assets/images/countdownsection/image 1.png";
 import yellow from "../../assets/images/countdownsection/Group 3.svg";
+import r3 from "../../assets/icons/r3.png";
 import { Count } from "./Count";
 
 export const Countdown = () => {
   return (
     <div
-      className="w-full bg-center bg-cover mt-16 md:mt-28 overflow-hidden "
+      className="w-full bg-center bg-cover mt-16 md:mt-28 overflow-hidden relative "
       style={{
         backgroundImage: `url(${bg})`,
       }}
     >
+      <img src={r3} className="bottom-1 absolute right-0" alt="" />
       <div className="lg:px-[6%] xl:px-[8%] px-[3%] py-20">
         <div className="md:space-y-3 space-y-2 relative">
           <span className="absolute hidden md:block xl:right-[-20%]  lg:right-[-20%] md:right-[-40%] bottom-[-15%] md:bottom-[-10%] xl:bottom-[-15%]">

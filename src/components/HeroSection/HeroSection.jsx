@@ -10,6 +10,7 @@ import f3 from "../../assets/icons/r3.png";
 import "./style.css";
 
 import { PromoCode } from "./PromoCode";
+import { Link } from "react-router";
 
 export const HeroSection = () => {
   return (
@@ -55,7 +56,12 @@ export const HeroSection = () => {
             At Fresh Harvests, we are passionate about providing you with the
             freshest and most flavorful fruits and vegetables
           </p>
-          <button className="btn bg-secondarybase text-white">Shop Now</button>
+          <Link
+            to="/products"
+            className="btn md:btn-md btn-sm bg-secondarybase text-white"
+          >
+            Shop Now
+          </Link>
 
           <PromoCode />
           <div className="mt-28 md:mt-0">

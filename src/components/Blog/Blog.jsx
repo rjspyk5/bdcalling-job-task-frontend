@@ -4,10 +4,16 @@ import { BlogCard } from "./BlogCard";
 import img2 from "../../assets/images/blog/image 2.png";
 import img4 from "../../assets/images/blog/image 4.png";
 import img3 from "../../assets/images/blog/image 3.png";
+import leaf from "../../assets/icons/r5.png";
 
 export const Blog = () => {
   return (
     <div className="mt-8 md:mt-16 lg:px-[6%] xl:px-[8%] px-[3%] relative">
+      <img
+        src={leaf}
+        alt=""
+        className="absolute right-[14%] top-[6%] md:block hidden"
+      />
       <SectionHeading
         name="Blog"
         heading="Fresh Harvest Blog"

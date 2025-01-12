@@ -3,7 +3,6 @@ import { SectionHeading } from "../SectionHeading/SectionHeading";
 import { ProductCard } from "./ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { useAxiosPublic } from "./../../hooks/useAxiosPublic";
-import product from "../../assets/images/sampleProducts/16.png";
 import r4 from "../../assets/icons/r4.png";
 import r5 from "../../assets/icons/r5.png";
 import { CustomButton } from "../CustomButton/CustomButton";
@@ -33,7 +32,6 @@ export const OurProducts = () => {
     queryKey: ["all products"],
     queryFn: async () => {
       const result = await axiosPublic.get("/api/v1/products");
-
       return result?.data?.data;
     },
   });
@@ -89,9 +87,7 @@ export const OurProducts = () => {
         {!productsLoading &&
           filteredProducts
             ?.slice(0, pathname === "/" ? 8 : filteredProducts.length)
-            .map((el) => (
-              <ProductCard data={el} key={el.id} img={product} price={20} />
-            ))}
+            .map((el) => <ProductCard data={el} key={el.id} />)}
       </div>
       {pathname === "/" && filteredProducts?.length > 8 && (
         <Link to="/products" className="flex justify-center items-center mt-8">
